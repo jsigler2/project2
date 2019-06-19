@@ -140,12 +140,7 @@ $(document).ready(() => {
   // This will initiliaze all of the Materialize JS Animations
   M.AutoInit();
 
-  // $('.sidenav').sidenav();
-  // $('.tabs').tabs();
-  // $('.fixed-action-btn').floatingActionButton();
-  // $('.tooltipped').tooltip();
-  // $('.modal').modal();
-  // $('.datepicker').datepicker();
+
 
   //================================================================================================================================||
   // Creating a New To Do
@@ -222,14 +217,27 @@ $(document).ready(() => {
 
       // Update the DOM
       $level.text(currentLevel);
-
       experiencePercent = 0;
       experiencePercentToString = `${experiencePercent.toString()}%`
       $experiencePoints.css({ width: experiencePercentToString })
 
+      // Show the Level Up Modal
+      $('#levelUpModal').modal('open')
 
 
     }
+
+  });
+
+
+  //================================================================================================================================||
+  // Checkbox Event Listeners
+  //================================================================================================================================||
+  $(document).on("click", "#upgradeModalTrigger", () => {
+    $("#upgradeModal").modal('open');
+
+    $("#avatar").attr("src", "../images/robotmedium.png");
+    $("#levelUpImage").attr("src", "../images/robotmedium.png");
 
   })
 
